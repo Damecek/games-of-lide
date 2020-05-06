@@ -1,3 +1,10 @@
 {
-    "cSpell.language": "en,en-GB,en-US"
+    "cSpell.language": "en,en-GB,en-US",
+    "emmet.excludeLanguages": [
+
+        "markdown"
+    ],
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    }
 }

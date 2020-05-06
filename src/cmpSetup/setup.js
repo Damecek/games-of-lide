@@ -1,11 +1,19 @@
 import React, { Component } from 'react'
 
+import Slider from '../cmpSlider/slider';
+import ButtonGroup from '../cmpBtnGroup/btnGroup';
+
 export class Setup extends Component {
     render() {
         return (
-            <div className="row">
-                <div className="col-12 text-center">
-                    <p>Setup goes here, all buttons and so on!!!</p>
+            <div>
+                <div className="row justify-content-center">
+                    <ButtonGroup />
+                </div>
+                <div className="row justify-content-center">
+                    <div className="col-2">
+                        <Slider />
+                    </div>
                 </div>
             </div>
         )

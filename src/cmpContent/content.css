@@ -1,7 +1,15 @@
-/* div.content {
-    padding: 0px 30px 0px 30px;
-} */
+.content {
+    background-color: var(--blue);
+}
 
-h1.content {
-    color: var(--blue);
+h1 {
+    color: var(--orange);
+}
+
+label {
+    color: var(--orange) !important;
+}
+
+div {
+    color: var(--orange);
 }

@@ -1,11 +1,11 @@
 :root {
-    --red: #ff6b35;
-    --brown: #f7c59f;
-    --green: #efefd0;
-    --blue: #004e89;
-    --light-blue: #1a659e;
+    --red: #d1495b;
+    --orange: #edae49;
+    --green: #00798c;
+    --blue: #003d5b;
+    --light-blue: #30638e;
 }
 
-h1{
-    color: var(--red);
+body {
+    background-color: var(--green);
 }
