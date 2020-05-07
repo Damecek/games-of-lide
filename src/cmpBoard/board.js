@@ -18,7 +18,8 @@ export class Board extends Component {
         return (
             <div className="row">
                 <div className="col-12 text-center">
-                    <p>{`For now the type of game is ${this.props.type} and size is ${this.props.size}`}</p>
+                    {/* <p>{`For now the type of game is ${this.props.type} and size is ${this.props.size}`}</p> */}
+                    <p>&nbsp;</p>
                     <Life type={this.props.type} size={this.props.size} />
                 </div>
             </div>
