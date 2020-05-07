@@ -1,5 +1,4 @@
-// export class OneGame {
-class OneGame {
+export class OneGame {
     constructor(size) {
         this._size = size;
         let board = [];
@@ -22,8 +21,7 @@ class OneGame {
         this.board.forEach(e => {
             line += e + ' ';
         });
-        console.log(line);
-        
+        return line;
     }
 
     tick() {
@@ -54,11 +52,4 @@ class OneGame {
     }
 }
 
-let a = new OneGame(20);
-a.print();
-for (let i = 0; i < 10; i++) {
-    a.tick();
-    a.print();
-}
-
-// export default OneGame
+export default OneGame

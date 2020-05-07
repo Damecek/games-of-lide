@@ -22,12 +22,12 @@ export class Setup extends Component {
         return (
             <div>
                 <div className="row justify-content-center">
-                    <ButtonGroup onTypeChange={this.handleTypeChange} />
-                </div>
-                <div className="row justify-content-center">
                     <div className="col-2">
                         <Slider onSizeChange={this.handleSizeChange} />
                     </div>
+                </div>
+                <div className="row justify-content-center">
+                    <ButtonGroup onTypeChange={this.handleTypeChange} />
                 </div>
             </div>
         )
