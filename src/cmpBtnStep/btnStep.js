@@ -14,7 +14,7 @@ export class ButtonStep extends Component {
         return (
             <div>
                 <button type="button" className="btn btn-secondary btn-block" 
-                        onClick={this.handleClick} disabled={false}>
+                        onClick={this.handleClick} disabled={this.props.isDisabled}>
                     Step
                 </button>
             </div>
