@@ -3,9 +3,6 @@ import React, { Component } from 'react'
 import OneLife from '../cmpOneLife/oneLife';
 
 export class Board extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         function Life(props) {
@@ -17,9 +14,7 @@ export class Board extends Component {
 
         return (
             <div className="row">
-                <div className="col-12 text-center">
-                    {/* <p>{`For now the type of game is ${this.props.type} and size is ${this.props.size}`}</p> */}
-                    <p>&nbsp;</p>
+                <div className="col-12 text-center my-1">
                     <Life type={this.props.type} size={this.props.size} />
                 </div>
             </div>

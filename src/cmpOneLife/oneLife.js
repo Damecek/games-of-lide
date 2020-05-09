@@ -36,7 +36,7 @@ export class OneLife extends Component {
     render() {
         return (
             <div>
-                <div className="row justify-content-center">
+                <div className="row justify-content-center my-1">
                     <div className="col-1 justify-content-center">
                         <ButtonPlay onClick={this.handleClickPlay} />
                     </div>
@@ -44,8 +44,7 @@ export class OneLife extends Component {
                         <ButtonStep onClick={this.handleClickStep} isDisabled={this.state.isPlaying} />
                     </div>
                 </div>
-                <p>&nbsp;</p>
-                <div className="row justify-content-center">
+                <div className="row justify-content-center mt-3">
                     <Line line={this.state.game.board} />
                 </div>
             </div>
