@@ -9,8 +9,9 @@ export class Slider extends Component {
     }
 
     handleInput(event) {
-        const val = event.target.value;
-        this.setState({value: val});
+        const newSize = event.target.value;
+        this.setState({value: newSize});
+        this.props.onSizeChange(newSize);
     }
 
     handleMouseUp(event) {
@@ -23,7 +24,7 @@ export class Slider extends Component {
             <div>
                 Size of game: {this.state.value}
                 <input type="range" className="form-control-range" 
-                        min="5" max="1000" id="range" value={this.state.value}
+                        min="5" max="125" id="range" value={this.state.value}
                         onChange={this.handleInput} onMouseUp={this.handleMouseUp}/>
             </div>
         )

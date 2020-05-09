@@ -8,7 +8,7 @@ import Line from '../cmpLine/line';
 export class OneLife extends Component {
     constructor(props) {
         super(props);
-        this.state = {game: new Game(this.props.size), timeout: '', isPlaying: false};
+        this.state = {game: new Game(this.props.size), interval: '', isPlaying: false};
         this.handleClickPlay = this.handleClickPlay.bind(this);
         this.handleClickStep = this.handleClickStep.bind(this);
     }
@@ -16,12 +16,12 @@ export class OneLife extends Component {
     handleClickPlay(action) {
         if (action === 'Play') {
             this.setState({isPlaying: true,
-                timeout: setInterval(() => {
+                interval: setInterval(() => {
                     this.state.game.tick();
                     this.setState({game: this.state.game});
-                }, 1000)});
+                }, 300)});
         } else if (action === 'Stop') {
-            clearTimeout(this.state.timeout);
+            clearInterval(this.state.interval);
             this.setState({isPlaying: false});
         } else {
             console.log('wrong attribute value in handleClickPlay');
@@ -50,6 +50,10 @@ export class OneLife extends Component {
                 </div>
             </div>
         )
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.state.interval)
     }
 }
 
