@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
 
-import Game from '../game/oneDimGameOfLife';
+import OneGame from '../life/oneDimLife';
+// import TwoGame from '../life/twoDimLife'; //not yet developed
+// import ThreeGame from '../life/threeDimLife'; //not yet developed
+
 import ButtonPlay from '../cmpBtnPlay/btnPlay';
 import ButtonStep from '../cmpBtnStep/btnStep';
-import Line from '../cmpLine/line';
 
-export class OneLife extends Component {
+export class Life extends Component {
     constructor(props) {
         super(props);
-        this.state = {game: new Game(this.props.size), interval: '', isPlaying: false};
+        this.state = {game: new OneGame(this.props.size), interval: '', isPlaying: false};
         this.handleClickPlay = this.handleClickPlay.bind(this);
         this.handleClickStep = this.handleClickStep.bind(this);
     }
@@ -45,7 +47,7 @@ export class OneLife extends Component {
                     </div>
                 </div>
                 <div className="row justify-content-center mt-3">
-                    <Line line={this.state.game.board} />
+                    {this.props.render(this.state.game.board)}
                 </div>
             </div>
         )
@@ -56,4 +58,4 @@ export class OneLife extends Component {
     }
 }
 
-export default OneLife
+export default Life

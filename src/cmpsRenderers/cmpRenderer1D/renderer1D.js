@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
-import './line.css';
+import '../renderer.css';
 
-export class Line extends Component {
+export class Renderer1D extends Component {
     render() {
         function color(item) {
             return item === 0 ? "white" : "black";
         }
-        const size = this.props.line.length > 34 ? (1140/this.props.line.length).toString() + 'px': '34px';
+        const length = this.props.obj.length; //obj is array from game(1d,2d,3d)
+        const size = length > 34 ? (1140/length).toString() + 'px': '34px';
         return (
             <div>
-                {this.props.line.map((item, i) =>{
+                {this.props.obj.map((item, i) =>{
                     return <span className={`square ${color(item)}`} key={i} style={{width: size, height: size}}></span>;
                 })}
             </div>
@@ -17,4 +18,4 @@ export class Line extends Component {
     }
 }
 
-export default Line
+export default Renderer1D
