@@ -21,12 +21,12 @@ export class Setup extends Component {
     render() {
         return (
             <div>
-                <div className="row justify-content-center">
+                <div className="row justify-content-center my-1">
                     <div className="col-2">
                         <Slider onSizeChange={this.handleSizeChange} />
                     </div>
                 </div>
-                <div className="row justify-content-center">
+                <div className="row justify-content-center my-1">
                     <ButtonGroup onTypeChange={this.handleTypeChange} />
                 </div>
             </div>
