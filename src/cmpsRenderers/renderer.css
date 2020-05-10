@@ -15,3 +15,11 @@
 .white {
     background-color: white !important;
 }
+
+.reset-line-height {
+    line-height: 0;
+}
+
+.full-width {
+    width: 95%;
+}

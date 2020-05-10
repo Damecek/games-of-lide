@@ -4,8 +4,8 @@ import OneGame from '../life/oneDimLife';
 // import TwoGame from '../life/twoDimLife'; //not yet developed
 // import ThreeGame from '../life/threeDimLife'; //not yet developed
 
-import ButtonPlay from '../cmpBtnPlay/btnPlay';
-import ButtonStep from '../cmpBtnStep/btnStep';
+import ButtonPlay from '../cmpsButtons/cmpBtnPlay/btnPlay';
+import ButtonStep from '../cmpsButtons/cmpBtnStep/btnStep';
 
 export class Life extends Component {
     constructor(props) {
@@ -17,14 +17,20 @@ export class Life extends Component {
 
     handleClickPlay(action) {
         if (action === 'Play') {
+            this.state.game.tick();
+            this.setState({game: this.state.game});
             this.setState({isPlaying: true,
                 interval: setInterval(() => {
                     this.state.game.tick();
                     this.setState({game: this.state.game});
-                }, 300)});
+                }, 100)});
+                console.log('start play');
         } else if (action === 'Stop') {
+            this.state.game.tick();
+            this.setState({game: this.state.game});
             clearInterval(this.state.interval);
             this.setState({isPlaying: false});
+            console.log('stop play');
         } else {
             console.log('wrong attribute value in handleClickPlay');
         }

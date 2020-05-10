@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import Slider from '../cmpSlider/slider';
-import ButtonGroup from '../cmpBtnGroup/btnGroup';
+import ButtonGroup from '../cmpsButtons/cmpBtnGroup/btnGroup';
 
 export class Setup extends Component {
     constructor(props) {
