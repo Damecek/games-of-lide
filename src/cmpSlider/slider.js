@@ -24,7 +24,7 @@ export class Slider extends Component {
             <div>
                 Size of game: {this.state.value}
                 <input type="range" className="form-control-range" 
-                        min="5" max="125" id="range" value={this.state.value}
+                        min="5" max="200" id="range" value={this.state.value}
                         onChange={this.handleInput} onMouseUp={this.handleMouseUp}/>
             </div>
         )

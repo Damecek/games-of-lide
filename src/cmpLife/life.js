@@ -52,7 +52,7 @@ export class Life extends Component {
                         <ButtonStep onClick={this.handleClickStep} isDisabled={this.state.isPlaying} />
                     </div>
                 </div>
-                <div className="row justify-content-center mt-3">
+                <div className="row justify-content-center mt-3 w-100 ml-0">
                     {this.props.render(this.state.game.board)}
                 </div>
             </div>
