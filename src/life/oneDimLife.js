@@ -19,22 +19,18 @@ export class OneLife extends LifeAbstract {
         return this._board;
     }
 
-    get numNeighborhoods() {
-        return this._numNeighborhoods;
-    }
-
     print() {
         let line = '';
         this.board.forEach(e => {
             line += e + ' ';
         });
-        return line;
+        console.log(line);
     }
 
     tick() {
         function countNeighborhoods(obj, index) {
             let n = 0;
-            for (let i = -obj.numNeighborhoods; i <= obj.numNeighborhoods; i++) {
+            for (let i = -obj._numNeighborhoods; i <= obj._numNeighborhoods; i++) {
                 if (index + i >= 0 && index + i < obj.board.length) {
                     n += obj.board[index + i];
                 }
