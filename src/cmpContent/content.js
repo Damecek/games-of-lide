@@ -8,7 +8,7 @@ import Board from '../cmpBoard/board';
 export class Content extends Component {
     constructor(props) {
         super(props);
-        this.state = {type: '', size: 5};
+        this.state = {type: '', size: 40};
         this.handleSizeChange = this.handleSizeChange.bind(this);
         this.handleTypeChange = this.handleTypeChange.bind(this);
     }

@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export class Slider extends Component {
     constructor(props) {
         super(props);
-        this.state = {value: 5};
+        this.state = {value: 40};
         this.handleInput = this.handleInput.bind(this);
         this.handleMouseUp = this.handleMouseUp.bind(this);
     }

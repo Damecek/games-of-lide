@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './life.css';
 
 import OneGame from '../life/oneDimLife';
 // import TwoGame from '../life/twoDimLife'; //not yet developed
@@ -10,7 +11,7 @@ import ButtonStep from '../cmpsButtons/cmpBtnStep/btnStep';
 export class Life extends Component {
     constructor(props) {
         super(props);
-        this.state = {game: new OneGame(this.props.size), interval: '', isPlaying: false};
+        this.state = {game: new OneGame(this.props.size, 2), interval: '', isPlaying: false};
         this.handleClickPlay = this.handleClickPlay.bind(this);
         this.handleClickStep = this.handleClickStep.bind(this);
     }
@@ -44,7 +45,7 @@ export class Life extends Component {
     render() {
         return (
             <div>
-                <div className="row justify-content-center my-1">
+                <div className="row justify-content-center py-2 sticky w-100 ml-0">
                     <div className="col-1 justify-content-center">
                         <ButtonPlay onClick={this.handleClickPlay} />
                     </div>
@@ -52,7 +53,7 @@ export class Life extends Component {
                         <ButtonStep onClick={this.handleClickStep} isDisabled={this.state.isPlaying} />
                     </div>
                 </div>
-                <div className="row justify-content-center mt-3 w-100 ml-0">
+                <div className="row justify-content-center mt-0 w-100 ml-0">
                     {this.props.render(this.state.game.board)}
                 </div>
             </div>
