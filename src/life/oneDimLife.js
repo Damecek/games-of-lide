@@ -1,6 +1,9 @@
-export class OneGame {
-    constructor(size) {
+import LifeAbstract from './lifeAbstract';
+export class OneLife extends LifeAbstract {
+    constructor(size, numNeighborhoods=2) {
+        super();
         this._size = size;
+        this._numNeighborhoods = numNeighborhoods;
         let board = [];
         for (let i = 0; i < size; i++) {
             board.push(Math.round(Math.random() * 1));
@@ -16,6 +19,10 @@ export class OneGame {
         return this._board;
     }
 
+    get numNeighborhoods() {
+        return this._numNeighborhoods;
+    }
+
     print() {
         let line = '';
         this.board.forEach(e => {
@@ -25,19 +32,19 @@ export class OneGame {
     }
 
     tick() {
-        function neib(board, index) {
+        function countNeighborhoods(obj, index) {
             let n = 0;
-            for (let i = -2; i < 3; i++) {
-                if (index + i >= 0 && index + i < board.length) {
-                    n += board[index + i];
+            for (let i = -obj.numNeighborhoods; i <= obj.numNeighborhoods; i++) {
+                if (index + i >= 0 && index + i < obj.board.length) {
+                    n += obj.board[index + i];
                 }
             }
-            return board[index] === 1 ? n - 1 : n;
+            return obj.board[index] === 1 ? n - 1 : n;
         }
 
         let newBoard = this.board.slice();
         for (let i = 0; i < this.size; i++) {
-            let n = neib(this.board, i);
+            let n = countNeighborhoods(this, i);
             if (this.board[i] === 1) {
                 if (n === 0 || n === 1 || n === 3) {
                     newBoard[i] = 0;
@@ -52,4 +59,4 @@ export class OneGame {
     }
 }
 
-export default OneGame
+export default OneLife

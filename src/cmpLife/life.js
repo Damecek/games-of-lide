@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import './life.css';
 
-import OneGame from '../life/oneDimLife';
-// import TwoGame from '../life/twoDimLife'; //not yet developed
-// import ThreeGame from '../life/threeDimLife'; //not yet developed
+import OneLife from '../life/oneDimLife';
+// import TwoLife from '../life/twoDimLife'; //not yet developed
+// import ThreeLife from '../life/threeDimLife'; //not yet developed
 
 import ButtonPlay from '../cmpsButtons/cmpBtnPlay/btnPlay';
 import ButtonStep from '../cmpsButtons/cmpBtnStep/btnStep';
@@ -11,7 +11,7 @@ import ButtonStep from '../cmpsButtons/cmpBtnStep/btnStep';
 export class Life extends Component {
     constructor(props) {
         super(props);
-        this.state = {game: new OneGame(this.props.size, 2), interval: '', isPlaying: false};
+        this.state = {game: new OneLife(this.props.size, 2), interval: '', isPlaying: false};
         this.handleClickPlay = this.handleClickPlay.bind(this);
         this.handleClickStep = this.handleClickStep.bind(this);
     }
@@ -24,7 +24,7 @@ export class Life extends Component {
                 interval: setInterval(() => {
                     this.state.game.tick();
                     this.setState({game: this.state.game});
-                }, 100)});
+                }, 200)});
                 console.log('start play');
         } else if (action === 'Stop') {
             this.state.game.tick();
