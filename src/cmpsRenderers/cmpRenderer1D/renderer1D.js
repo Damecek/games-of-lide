@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import '../renderer.css';
 
 export class Renderer1D extends Component {
-    static history = [];
-
     constructor(props) {
         super(props);
         this.state = {history: []};
