@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import '../renderer.css';
 
-import Square from '../../cmpSquare/square';
-
+import Line from '../../cmpLine/line';
 export class Renderer1D extends Component {
     constructor(props) {
         super(props);
@@ -22,11 +21,7 @@ export class Renderer1D extends Component {
             <div className="w-100 justify-content-center">
                 {this.state.history.map((line, i)=>{
                     return (
-                        <div key={i} className="reset-line-height">
-                            {line.map((item, i)=>{
-                                return <Square length={this.props.obj.length} key={i} value={item} />
-                            })}
-                        </div>
+                            <Line length={line.length} value={line} key={i} />
                     )
                 })}
             </div>

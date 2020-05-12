@@ -11,9 +11,7 @@ export class Square extends Component {
         }
         const size = (100/this.props.length).toFixed(20) + '%';
         return (
-            <div>
                 <span className={`square ${color(this.props.value)}`} style={{width: size, paddingTop: size}}></span>
-            </div>
         )
     }
 }
