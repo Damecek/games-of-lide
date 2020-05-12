@@ -35,7 +35,7 @@ export class Life extends Component {
                     this.state.game.tick();
                     this.setState({game: this.state.game});
                     if (this.props.type === '1'){this.refLastLine.current.scrollIntoView();}
-                }, 200)});
+                }, 100)});
         } else if (action === 'Stop') {
             clearInterval(this.state.interval);
             this.state.game.tick();
@@ -67,7 +67,7 @@ export class Life extends Component {
                         <ButtonStep onClick={this.handleClickStep} isDisabled={this.state.isPlaying} />
                     </div>
                 </div>
-                <div className="row justify-content-center mt-0 w-100 ml-0">
+                <div className="row justify-content-center mt-0 w-100 ml-0 pb-1">
                     {this.props.render(this.state.game.board)}
                 </div>
                 {this.handleScroll(this.props)}

@@ -12,6 +12,7 @@ export class TwoLife extends LifeAbstract {
             }
             board.push([]);
         }
+        board.pop();
         this._board = board;
     }
 
