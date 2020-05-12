@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
-export class BtnGroup extends Component {
+export class BtnGroup extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {selected: 0};

@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 
 export class Title extends Component {
+    shouldComponentUpdate() {
+        return false;
+    }
+
     render() {
         return (
             <div className="row">

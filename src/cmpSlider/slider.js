@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
-export class Slider extends Component {
+export class Slider extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {value: 40};

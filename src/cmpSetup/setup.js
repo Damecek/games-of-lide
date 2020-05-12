@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
 import Slider from '../cmpSlider/slider';
 import ButtonGroup from '../cmpsButtons/cmpBtnGroup/btnGroup';
 
-export class Setup extends Component {
+export class Setup extends PureComponent {
     constructor(props) {
         super(props);
         this.handleTypeChange = this.handleTypeChange.bind(this);
