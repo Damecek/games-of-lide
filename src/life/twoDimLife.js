@@ -59,7 +59,7 @@ export class TwoLife extends LifeAbstract {
         let newBoard = this.board.slice();
         this.board.forEach((line, row)=>{
             line.forEach((item, col)=>{
-                let n = countNeighborhoods(this, {row: row, col: col});
+                let n = countNeighborhoods(this, {'row': row, 'col': col});
                 if (this.board[row][col] === 1) {
                     if (n !== 2 && n !== 3) {
                         newBoard[row][col] = 0;

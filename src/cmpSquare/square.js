@@ -1,11 +1,6 @@
 import React, { PureComponent } from 'react'
 
 export class Square extends PureComponent {
-    componentDidUpdate(prevProps, prevState) {
-        console.log('updated square');
-        
-    }
-
     render() {
         const color = ()=> {return this.props.value === 0 ? 'white' : 'black'};
         return (

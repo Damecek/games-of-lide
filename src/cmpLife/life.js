@@ -35,7 +35,7 @@ export class Life extends Component {
                     this.state.game.tick();
                     this.setState({game: this.state.game.clone()});
                     if (this.props.type === '1'){this.refLastLine.current.scrollIntoView();}
-                }, 400)});
+                }, 100)});
         } else if (action === 'Stop') {
             clearInterval(this.state.interval);
             this.state.game.tick();

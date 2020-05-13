@@ -6,12 +6,12 @@
 
 .black {
     background-color: black !important;
-    border: 0.1px ridge black;
+    /* border: 0.1px ridge black; */
 }
 
 .white {
     background-color: white !important;
-    border: 0.1px ridge #c9c6c67d;
+    /* border: 0.1px ridge #c9c6c67d; */
 }
 
 .reset-line-height {
