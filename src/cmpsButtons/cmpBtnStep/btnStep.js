@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
-export class ButtonStep extends Component {
+export class ButtonStep extends PureComponent {
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);

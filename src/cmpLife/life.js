@@ -30,16 +30,16 @@ export class Life extends Component {
     handleClickPlay(action) {
         if (action === 'Play') {
             this.state.game.tick();
-            this.setState({game: this.state.game, isPlaying: true,
+            this.setState({game: this.state.game.clone(), isPlaying: true,
                 interval: setInterval(() => {
                     this.state.game.tick();
-                    this.setState({game: this.state.game});
+                    this.setState({game: this.state.game.clone()});
                     if (this.props.type === '1'){this.refLastLine.current.scrollIntoView();}
-                }, 100)});
+                }, 400)});
         } else if (action === 'Stop') {
             clearInterval(this.state.interval);
             this.state.game.tick();
-            this.setState({game: this.state.game, isPlaying: false});
+            this.setState({game: this.state.game.clone(), isPlaying: false});
             if (this.props.type === '1'){this.refLastLine.current.scrollIntoView();}
         } else {
             throw new Error('Wrong attribute value in handleClickPlay');
@@ -48,7 +48,7 @@ export class Life extends Component {
 
     handleClickStep(event) {
         this.state.game.tick();
-        this.setState({game: this.state.game});
+        this.setState({game: this.state.game.clone()});
         if (this.props.type === '1'){this.refLastLine.current.scrollIntoView({behavior: "smooth", block: "end"});}
     }
 

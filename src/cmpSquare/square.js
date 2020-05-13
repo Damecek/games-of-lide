@@ -1,17 +1,15 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
-export class Square extends Component {
-    shouldComponentUpdate(nextProps) {
-        return nextProps.value !== this.props.value;
+export class Square extends PureComponent {
+    componentDidUpdate(prevProps, prevState) {
+        console.log('updated square');
+        
     }
 
     render() {
-        function color(val) {
-            return val === 0 ? "white" : "black";
-        }
-        const size = (100/this.props.length).toFixed(20) + '%';
+        const color = ()=> {return this.props.value === 0 ? 'white' : 'black'};
         return (
-                <span className={`square ${color(this.props.value)}`} style={{width: size, paddingTop: size}}></span>
+                <span className={`square ${color(this)}`} style={{width: this.props.size, paddingTop: this.props.size}}></span>
         )
     }
 }

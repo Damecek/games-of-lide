@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
-export class ButtonPlay extends Component {
+export class ButtonPlay extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {action: 'Play'};
