@@ -5,5 +5,8 @@ export class LifeAbstract {
     tick(){
         throw new Error('Method "tick()" was not implemented!');
     }
+    clone(){
+        throw new Error('Method "clone()" was not implemented!');
+    }
 }
 export default LifeAbstract;

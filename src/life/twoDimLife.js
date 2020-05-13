@@ -1,18 +1,19 @@
 import LifeAbstract from './lifeAbstract';
 
 export class TwoLife extends LifeAbstract {
-    constructor(size, typeNeighborhood='normal') {
+    constructor(size, typeNeighborhood='normal', board=[[]]) {
         super();
         this._size = size;
         this._typeNeighborhood = typeNeighborhood;
-        let board = [[]];
-        for (let row = 0; row < size; row++) {
-            for (let col = 0; col < size; col++) {
-                board[row].push(Math.round(Math.random() * 1));
+        if (board.length === 1) {
+            for (let row = 0; row < size; row++) {
+                for (let col = 0; col < size; col++) {
+                    board[row].push(Math.round(Math.random() * 1));
+                }
+                board.push([]);
             }
-            board.push([]);
+            board.pop();
         }
-        board.pop();
         this._board = board;
     }
 
@@ -71,6 +72,10 @@ export class TwoLife extends LifeAbstract {
             })
         })
         this._board = newBoard;
+    }
+
+    clone() {
+        return new TwoLife(this.size, this.typeNeighborhood, this.board);
     }
 }
 

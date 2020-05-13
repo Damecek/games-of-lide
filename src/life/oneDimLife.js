@@ -1,12 +1,13 @@
 import LifeAbstract from './lifeAbstract';
 export class OneLife extends LifeAbstract {
-    constructor(size, numNeighborhoods=2) {
+    constructor(size, numNeighborhoods=2, board=[]) {
         super();
         this._size = size;
         this._numNeighborhoods = numNeighborhoods;
-        let board = [];
-        for (let i = 0; i < size; i++) {
-            board.push(Math.round(Math.random() * 1));
+        if (board.length === 0) {
+            for (let i = 0; i < size; i++) {
+                board.push(Math.round(Math.random() * 1));
+            }    
         }
         this._board = board;
     }
@@ -52,6 +53,10 @@ export class OneLife extends LifeAbstract {
             }
         }
         this._board = newBoard;
+    }
+
+    clone() {
+        return new OneLife(this.size, this.numNeighborhoods, this.board);
     }
 }
 
