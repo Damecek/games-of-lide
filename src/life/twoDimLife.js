@@ -8,7 +8,7 @@ export class TwoLife extends LifeAbstract {
         if (board.length === 1) {
             for (let row = 0; row < size; row++) {
                 for (let col = 0; col < size; col++) {
-                    board[row].push(Math.round(Math.random() * 1));
+                    board[row].push(Math.round(Math.pow(Math.random(), 2)));
                 }
                 board.push([]);
             }
@@ -39,32 +39,41 @@ export class TwoLife extends LifeAbstract {
     tick() {
         function countNeighborhoods(obj, index) {
             let n = 0;
+            const size = obj._size;
             switch (obj._typeNeighborhood) {
                 case 'normal':
                     for (let row = -1; row <= 1; row++) {
                         for (let col = -1; col <= 1; col++) {
                             const i = {'row': index.row + row, 'col': index.col + col};
-                            if (i.row >= 0 && i.row < obj.size && i.col >= 0 && i.col < obj.size) {
-                                n += obj.board[i.row][i.col];
-                            }
+                            if (i.row < 0){continue;}
+                            if (i.row >= size){continue;}
+                            if (i.col < 0){continue;}
+                            if (i.col >= size){continue;}
+                            if (row === 0 && col === 0){continue;}
+                            n += obj._board[i.row][i.col];
                         }
                     }
-                    return obj.board[index.row][index.col] === 1 ? n - 1 : n;
+                    return n;
             
                 default:
                     throw new Error('Undefined type of neighborhood!');
             }
         }
         
-        let newBoard = this.board.slice();
-        this.board.forEach((line, row)=>{
+        let newBoard = this._board.map((line)=>{
+            return line.concat([]);
+        })
+
+
+        
+        this._board.forEach((line, row)=>{
             line.forEach((item, col)=>{
                 let n = countNeighborhoods(this, {'row': row, 'col': col});
-                if (this.board[row][col] === 1) {
+                if (item === 1) {
                     if (n !== 2 && n !== 3) {
                         newBoard[row][col] = 0;
                     }
-                } else if (this.board[row][col] === 0) {
+                } else if (item === 0) {
                     if (n === 3) {
                         newBoard[row][col] = 1;
                     }

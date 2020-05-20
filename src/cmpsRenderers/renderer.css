@@ -6,7 +6,7 @@
 
 .black {
     background-color: black !important;
-    /* border: 0.1px ridge black; */
+    /* border: 0.1px ridge black;   significantly loweres speed*/
 }
 
 .white {
